@@ -21,11 +21,16 @@
   --text-muted:     #44445a;
   --text-on-accent: #09090e;
 
-  --accent:       #d4f53c;
-  --accent-dim:   rgba(212,245,60,0.12);
-  --accent-hover: #e2ff5a;
+  --accent: #ff00de;
+  --accent-hover: #ffcf00;
 
-  --fire:       #ff5a38;
+  --brand-gradient: linear-gradient(
+  135deg,
+  #ff00de 0%,
+  #ffcf00 100%
+);
+
+--fire:       #ff5a38;
   --fire-dim:   rgba(255,90,56,0.13);
   --fire-text:  #ff7a5c;
   --fire-border:rgba(255,90,56,0.3);
@@ -125,4 +130,10 @@ a { color: inherit; text-decoration: none; }
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
