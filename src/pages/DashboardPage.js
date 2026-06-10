@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
-import { format, addDays, subDays, isToday, isTomorrow, isYesterday, parseISO, startOfDay } from 'date-fns';
+import { format, addDays, subDays, isToday, isTomorrow, isYesterday, startOfDay } from 'date-fns';
 import TaskCard from '../components/TaskCard';
 import AddTaskModal from '../components/AddTaskModal';
 import AIDumpModal from '../components/AIDumpModal';
