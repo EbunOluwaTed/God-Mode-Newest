@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
 import {
-  format, addDays, subDays, isToday, isTomorrow, isYesterday,
-  parseISO, startOfDay, isBefore, isAfter
+  format,
+  startOfDay
 } from 'date-fns';
 import TaskCard from '../components/TaskCard';
 import AddTaskModal from '../components/AddTaskModal';
