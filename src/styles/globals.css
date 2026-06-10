@@ -26,7 +26,7 @@
 
   --brand-gradient: linear-gradient(
   135deg,
-  #ff00de 0%,
+  #ff00de 100%,
   #ffcf00 100%
 );
 
@@ -136,4 +136,19 @@ a { color: inherit; text-decoration: none; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+button,
+.card,
+.task-card {
+  transition: all .25s ease;
+}
+
+button:hover,
+.card:hover,
+.task-card:hover {
+  transform: translateY(-4px);
+}
+
+button:active {
+  transform: scale(.97);
 }
