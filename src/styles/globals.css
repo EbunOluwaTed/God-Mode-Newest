@@ -140,7 +140,7 @@ a { color: inherit; text-decoration: none; }
 button,
 .card,
 .task-card {
-  transition: all .25s ease;
+  transition: all .12s ease;
 }
 
 button:hover,
