@@ -55,11 +55,26 @@ export default function DashboardPage({ session, onLogout, theme, toggleTheme })
   const activeDateStr = format(activeDate, 'yyyy-MM-dd');
 
   // Filter tasks for active date
-  const dayTasks = tasks.filter(t => {
-    if (t.status === 'done') return false;
-    if (!t.due) return isToday(activeDate);
-    return t.due === activeDateStr;
-  });
+  const pendingTasks =
+  tasks.filter(t => t.status !== "done");
+
+const completedTasks =
+  tasks.filter(t => t.status === "done");
+
+const overdueTasks =
+  pendingTasks.filter(
+    t => t.due && t.due < activeDateStr
+  );
+
+const todayTasks =
+  pendingTasks.filter(
+    t => t.due === activeDateStr
+  );
+
+const futureTasks =
+  pendingTasks.filter(
+    t => t.due && t.due > activeDateStr
+  );
 
   // Stats from ALL pending tasks
   const allPending = tasks.filter(t => t.status !== 'done');
@@ -183,7 +198,17 @@ export default function DashboardPage({ session, onLogout, theme, toggleTheme })
                 }
               </h1>
               <p style={css.heroSub}>
-                {session.username}
+                <h1
+                  className="gradient-text"
+                  style={{
+                    fontSize: "72px",
+                    fontWeight: 900,
+                    lineHeight: 1,
+                    marginTop: 10
+                  }}
+                >
+                  {session.username}
+                </h1>
               </p>
             </div>
 
